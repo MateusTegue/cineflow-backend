@@ -1,0 +1,32 @@
+{
+   "compilerOptions": {
+      "target": "ESNext",
+      "module": "NodeNext",
+      "moduleResolution": "NodeNext",
+      "outDir": "./build",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "sourceMap": true,
+      "allowJs": true,
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "strict": true,
+      "noUnusedLocals": true,
+      "noEmit": false,
+      "isolatedModules": true,
+      "noUnusedParameters": true,
+      "noImplicitReturns": true,
+      "noFallthroughCasesInSwitch": true,
+      "skipLibCheck": true,
+      "allowUnreachableCode": false,
+      "allowUnusedLabels": false,
+      "composite": false,
+      "preserveWatchOutput": true,
+      "resolveJsonModule": true,
+   },
+   "ts-node": {
+      "esm": true
+   },
+   "include": ["src/**/*", "*.ts"],
+   "exclude": ["node_modules"]
+}

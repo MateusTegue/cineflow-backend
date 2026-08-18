@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:17
+    container_name: cineflow-postgres
+
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_USER: cineflow
+      POSTGRES_PASSWORD: cineflow123
+      POSTGRES_DB: cineflowdb
+
+    ports:
+      - "5433:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

@@ -1,0 +1,7 @@
+/node_modules
+/opt
+/build
+/.vscode
+/.cache
+/.dockerignore
+/src/middlewares/authenticate.ts
