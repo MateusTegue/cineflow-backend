@@ -18,7 +18,11 @@ export const createServer = async (): Promise<FastifyInstance> => {
   }).withTypeProvider<ZodTypeProvider>()
 
   server.register(helmet)
-  server.register(cors)
+  server.register(cors, {
+    origin: true,
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  })
   server.register(compress)
 
   server.setValidatorCompiler(validatorCompiler)

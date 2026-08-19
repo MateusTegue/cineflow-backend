@@ -18,10 +18,11 @@ import getAllComfyUIRouter from './api/comfyui/getAllGenerations'
 import getOneComfyUIRouter from './api/comfyui/getOneGeneration'
 import updateComfyUIStatusRouter from './api/comfyui/updateStatus'
 import webhookComfyUIRouter from './api/comfyui/webhook'
+import deleteComfyUIRouter from './api/comfyui/deleteImage'
 
 const router: FastifyPluginCallback = (app, _, done) => {
   app.addHook('preSerialization', formatPayload)
-  app.get('/', () => { return { result: { data: null, message: 'Welcome to capin-core!' } }})
+  app.get('/', () => { return { result: { data: null, message: 'Welcome to capin-core!' } } })
 
   app.register(authRouter, { prefix: '/auth' })
 
@@ -41,6 +42,7 @@ const router: FastifyPluginCallback = (app, _, done) => {
   app.register(getOneComfyUIRouter, { prefix: '/comfyui' })
   app.register(updateComfyUIStatusRouter, { prefix: '/comfyui' })
   app.register(webhookComfyUIRouter, { prefix: '/comfyui' })
+  app.register(deleteComfyUIRouter, { prefix: '/comfyui' })
 
 
   done()
