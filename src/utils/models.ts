@@ -60,3 +60,19 @@ export interface GenerationParameters {
   negativePrompt?: string;
   [key: string]: any;
 }
+
+export enum ChatRole {
+  SYSTEM = "system",
+  USER = "user",
+  ASSISTANT = "assistant",
+}
+
+export interface TextGenerationParameters {
+  temperature?: number;
+  topP?: number;
+  maxTokens?: number;
+  frequencyPenalty?: number;
+  presencePenalty?: number;
+  stop?: string[];
+  [key: string]: any;
+}

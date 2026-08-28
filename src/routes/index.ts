@@ -20,6 +20,9 @@ import updateComfyUIStatusRouter from './api/comfyui/updateStatus'
 import webhookComfyUIRouter from './api/comfyui/webhook'
 import deleteComfyUIRouter from './api/comfyui/deleteImage'
 
+import createTextGenerationRouter from './api/textGeneration/TextGeneration'
+import getAllTextRouter from './api/textGeneration/getAllText'
+
 const router: FastifyPluginCallback = (app, _, done) => {
   app.addHook('preSerialization', formatPayload)
   app.get('/', () => { return { result: { data: null, message: 'Welcome to capin-core!' } } })
@@ -44,6 +47,9 @@ const router: FastifyPluginCallback = (app, _, done) => {
   app.register(webhookComfyUIRouter, { prefix: '/comfyui' })
   app.register(deleteComfyUIRouter, { prefix: '/comfyui' })
 
+
+  app.register(createTextGenerationRouter, { prefix: '/text-generation' })
+  app.register(getAllTextRouter, { prefix: '/text-generation' })
 
   done()
 }
