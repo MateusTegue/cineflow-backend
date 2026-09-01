@@ -1,6 +1,5 @@
 import { AppDataSource } from "../../database/data-source"
 import { TextGeneration } from "../../database/entity/TextGeneration"
-import { NotFoundError } from "../../helpers/exceptions-errors"
 
 
 export const TextGenerationRepository = AppDataSource.getRepository(TextGeneration).extend({
@@ -10,9 +9,14 @@ export const TextGenerationRepository = AppDataSource.getRepository(TextGenerati
                 created_at: 'DESC'
             }
         })
-        if (texts.length === 0) {
-            throw new NotFoundError('No texts found')
-        }
+
         return texts
     }
 })
+
+
+
+
+
+
+
