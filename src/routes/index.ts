@@ -22,6 +22,7 @@ import deleteComfyUIRouter from './api/comfyui/deleteImage'
 
 import createTextGenerationRouter from './api/textGeneration/TextGeneration'
 import getAllTextRouter from './api/textGeneration/getAllText'
+import deleteTextGenerateRouter from './api/textGeneration/deleteTextGenerate'
 
 const router: FastifyPluginCallback = (app, _, done) => {
   app.addHook('preSerialization', formatPayload)
@@ -50,6 +51,7 @@ const router: FastifyPluginCallback = (app, _, done) => {
 
   app.register(createTextGenerationRouter, { prefix: '/text-generation' })
   app.register(getAllTextRouter, { prefix: '/text-generation' })
+  app.register(deleteTextGenerateRouter, { prefix: '/text-generation' })
 
   done()
 }
